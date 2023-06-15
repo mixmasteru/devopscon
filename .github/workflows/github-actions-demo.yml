@@ -1,0 +1,20 @@
+name: GitHub Actions Demon
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.workflows'
+  workflow_dispatch:
+  schedule:
+      - cron: '15 6 * * 0'
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  jonb1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello devops"
