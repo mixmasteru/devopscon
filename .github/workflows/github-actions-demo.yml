@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.workflows'
+      - '.gitgub/workflows'
   workflow_dispatch:
   schedule:
       - cron: '15 6 * * 0'
@@ -16,5 +16,13 @@ on:
 jobs:
   jonb1:
     runs-on: ubuntu-latest
+    name: Build
     steps:
-      - run: echo "hello devops"
+      - uses: actions/checkout@v3
+      - run: |
+          echo "event: ${{github.event_name}}"
+          echo "branch is ${{ github.ref }}"
+      - name: List files in the repository
+        run: |
+          echo "The repository ${{ github.repository }} contains:"
+          tree
