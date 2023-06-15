@@ -1,4 +1,4 @@
-name: GitHub Actions Demon
+name: GitHub Actions Demo
 
 on:
   push:
@@ -19,7 +19,7 @@ on:
       - main
 
 jobs:
-  jonb1:
+  Build:
     runs-on: ubuntu-latest
     name: Build
     steps:
