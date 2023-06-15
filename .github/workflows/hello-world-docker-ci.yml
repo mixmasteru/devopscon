@@ -2,8 +2,9 @@ name: Hello Action
 
 on:
   push:
-    paths: [hello-world-docker-action]
-  workflow_run:
+    branches: [ main ]
+    paths: [ hello-world-docker-action/** ]
+  workflow_dispatch:
 
 jobs:
   los:
